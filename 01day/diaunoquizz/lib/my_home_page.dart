@@ -9,7 +9,23 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Hello world"),
       ),
-      body: const Text("Hello world body!"),
+      body: Column(
+        children: [
+          const Text("Pregunta"),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Respuesta uno"),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Respuesta dos"),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Respuesta tres"),
+          ),          
+        ],
+      ),
     );
   }
 }
