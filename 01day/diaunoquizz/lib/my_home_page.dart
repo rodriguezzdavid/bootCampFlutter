@@ -34,23 +34,28 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Hello world"),
       ),
-      body: Column(
-        children: [
-          // Text(questions[questionIdex]),
-          QuestionWidget(questions[questionIdex]),
-          ElevatedButton(
-            onPressed: answerQuestion,
-            child: const Text("Respuesta uno"),
-          ),
-          ElevatedButton(
-            onPressed: answerQuestion,
-            child: const Text("Respuesta dos"),
-          ),
-          ElevatedButton(
-            onPressed: answerQuestion,
-            child: const Text("Respuesta tres"),
-          ),
-        ],
+      body: Container(
+        // color: Colors.red,
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // Text(questions[questionIdex]),
+            QuestionWidget(questions[questionIdex]),
+            ElevatedButton(
+              onPressed: answerQuestion,
+              child: const Text("Respuesta uno"),
+            ),
+            ElevatedButton(
+              onPressed: answerQuestion,
+              child: const Text("Respuesta dos"),
+            ),
+            ElevatedButton(
+              onPressed: answerQuestion,
+              child: const Text("Respuesta tres"),
+            ),
+          ],
+        ),
       ),
     );
   }
