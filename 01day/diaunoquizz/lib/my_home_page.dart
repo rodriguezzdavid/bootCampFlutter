@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:diaunoquizz/question_widget.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -35,7 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Column(
         children: [
-          Text(questions[questionIdex]),
+          // Text(questions[questionIdex]),
+          QuestionWidget(questions[questionIdex]),
           ElevatedButton(
             onPressed: answerQuestion,
             child: const Text("Respuesta uno"),
