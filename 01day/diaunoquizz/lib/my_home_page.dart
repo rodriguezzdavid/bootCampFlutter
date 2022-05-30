@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
 
-  int questionIdex = 0;
+  var questionIdex = 0;
+
+  void answerQuestion() {    
+    questionIdex++;
+    print("Answer question");
+    print("questionIdex: $questionIdex");
+  }
+
   final questions = [
     "¿Color favorito?",
     "¿Animal favorito?",
@@ -11,12 +18,8 @@ class MyHomePage extends StatelessWidget {
     "Musica favorita?",
   ];
 
-  void answerQuestion() {
-    print("Answer question");
-  }
-
   @override
-  Widget build(BuildContext context) {      
+  Widget build(BuildContext context) {          
     return Scaffold(
       appBar: AppBar(
         title: const Text("Hello world"),
@@ -29,13 +32,11 @@ class MyHomePage extends StatelessWidget {
             child: const Text("Respuesta uno"),
           ),
           ElevatedButton(
-            onPressed: () {
-              print("Respuesta dos, función anónima");
-            },
+            onPressed: answerQuestion,
             child: const Text("Respuesta dos"),
           ),
           ElevatedButton(
-            onPressed: () => print("Respuesta tres, arrow function"),
+            onPressed: answerQuestion,
             child: const Text("Respuesta tres"),
           ),
         ],
