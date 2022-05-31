@@ -24,7 +24,14 @@ class _MyHomePageState extends State<MyHomePage> {
     print("questionIdex: $questionIndex");
   }
 
-  // Formatear: Al guardar documento. ctrl + k + d. Alt + shift + f  
+  void resetTest() {
+    setState(() {
+      questionIndex = 0;
+      totalScore = 0;
+    });
+  }
+
+  // Formatear: Al guardar documento. ctrl + k + d. Alt + shift + f
 
   // 1. Nuevo widget en otro documento: YourScoreWidget
   // 2. Centrar el texto "tu score es..."
@@ -43,7 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
               questionIndex: questionIndex,
               answerQuestion: answerQuestion,
             )
-          : YourScore(totalScore: totalScore),
+          : YourScore(
+              totalScore: totalScore,
+              callbackAction: resetTest,
+            ),
     );
   }
 }
