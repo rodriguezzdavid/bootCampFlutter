@@ -1,8 +1,5 @@
 // ignore_for_file: avoid_print
-
-import 'package:diaunoquizz/answer_button_widget.dart';
 import 'package:diaunoquizz/column_result_widget.dart';
-import 'package:diaunoquizz/question_widget.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -56,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               questionIndex: questionIndex,
               answerQuestion: answerQuestion,
             )
-          : Text("Gracias!"),
+          : const Text("Gracias!"),
     );
   }
 }
