@@ -1,3 +1,9 @@
+// 1. Crear una clase Question: title (String), answers (List<Answer>)
+// 2. Crear una clase Answer: title (String), score (int)
+// 3. Cambiar questions que ahorita es un List<Map<String, Object>> por un List<Question>
+// 4. Inicializar la variable question
+// 5. Resolver los errores de compilación
+
 final questions = [
   {
     "questionText": "Color favorito?",
