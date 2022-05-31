@@ -14,23 +14,37 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   var questionIndex = 0;
 
-  void answerQuestion() {    
+  void answerQuestion() {
     setState(() {
       questionIndex++;
-    });    
+    });
     print("Answer question");
     print("questionIdex: $questionIndex");
   }
 
+  // Formatear: Al guardar documento. ctrl + k + d. Alt + shift + f
+
   final questions = [
-    "¿Color favorito?",
-    "¿Animal favorito?",
-    "Comida favorita?",
-    "Musica favorita?",
+    {
+      "questionText": "Color favorito?",
+      "answers": ["Rojo", "Verde", "Amarillo", "Morado"],
+    },
+    {
+      "questionText": "Animal favorito?",
+      "answers": ["Caballo", "León", "Perro", "Gato", "Pinguino", "Elefante"],
+    },
+    {
+      "questionText": "Comida favorita?",
+      "answers": ["Gallo Pinto", "Tacos", "Chifrijo", "Casado"],
+    },
+    {
+      "questionText": "Música favorita?",
+      "answers": ["Rock", "Instrumental"],
+    },
   ];
 
   @override
-  Widget build(BuildContext context) {          
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Hello world"),
@@ -39,20 +53,14 @@ class _MyHomePageState extends State<MyHomePage> {
         // color: Colors.red,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [            
-            QuestionWidget(questions[questionIndex]),
-            AnswerButton(
-              onPressedFunction: answerQuestion,
-              buttonText: "Respuesta uno",
-            ),
-            AnswerButton(
-              buttonText: "Respuesta dos",
-              onPressedFunction: answerQuestion,
-            ),
-            AnswerButton(
-              buttonText: "Respuesta tres",
-              onPressedFunction: answerQuestion,
-            ),            
+          children: [
+            QuestionWidget(questions[questionIndex]["questionText"] as String),
+            ...(questions[questionIndex]["answers"] as List<String>).map((answerText) {
+              return AnswerButton(
+                onPressedFunction: answerQuestion,
+                buttonText: answerText,
+              );
+            }).toList()            
           ],
         ),
       ),
