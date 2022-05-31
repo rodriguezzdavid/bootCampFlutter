@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:diaunoquizz/answer_button_widget.dart';
 import 'package:diaunoquizz/question_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -11,14 +12,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var questionIdex = 0;
+  var questionIndex = 0;
 
   void answerQuestion() {    
     setState(() {
-      questionIdex++;
+      questionIndex++;
     });    
     print("Answer question");
-    print("questionIdex: $questionIdex");
+    print("questionIdex: $questionIndex");
   }
 
   final questions = [
@@ -37,23 +38,21 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         // color: Colors.red,
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Text(questions[questionIdex]),
-            QuestionWidget(questions[questionIdex]),
-            ElevatedButton(
-              onPressed: answerQuestion,
-              child: const Text("Respuesta uno"),
+          children: [            
+            QuestionWidget(questions[questionIndex]),
+            AnswerButton(
+              onPressedFunction: answerQuestion,
+              buttonText: "Respuesta uno",
             ),
-            ElevatedButton(
-              onPressed: answerQuestion,
-              child: const Text("Respuesta dos"),
+            AnswerButton(
+              buttonText: "Respuesta dos",
+              onPressedFunction: answerQuestion,
             ),
-            ElevatedButton(
-              onPressed: answerQuestion,
-              child: const Text("Respuesta tres"),
-            ),
+            AnswerButton(
+              buttonText: "Respuesta tres",
+              onPressedFunction: answerQuestion,
+            ),            
           ],
         ),
       ),
