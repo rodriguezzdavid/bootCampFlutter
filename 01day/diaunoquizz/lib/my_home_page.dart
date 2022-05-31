@@ -12,8 +12,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var questionIndex = 0;
+  var totalScore = 0;
 
-  void answerQuestion() {
+  void answerQuestion(int score) {
+    totalScore += score;
     setState(() {
       questionIndex++;
     });
@@ -35,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
               questionIndex: questionIndex,
               answerQuestion: answerQuestion,
             )
-          : const Text("Gracias!"),
+          : Text("Tu score es: $totalScore"),
     );
   }
 }

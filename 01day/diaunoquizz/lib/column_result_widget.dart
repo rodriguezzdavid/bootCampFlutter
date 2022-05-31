@@ -12,7 +12,7 @@ class ColumnResult extends StatelessWidget {
 
   final List<Map<String, Object>> questions;
   final int questionIndex;
-  final Function() answerQuestion;
+  final Function(int answerScore) answerQuestion;  
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +20,13 @@ class ColumnResult extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         QuestionWidget(questions[questionIndex]["questionText"] as String),
-        ...(questions[questionIndex]["answers"] as List<String>)
+        ...(questions[questionIndex]["answers"] as List<Map<String, Object>>)
             .map((answerText) {
           return AnswerButton(
-            onPressedFunction: answerQuestion,
-            buttonText: answerText,
+            onPressedFunction: () {
+              answerQuestion(answerText["score"] as int);
+            },
+            buttonText: answerText["text"] as String,
           );
         }).toList()
       ],
