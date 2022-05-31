@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Hello world"),
       ),
-      body: Container(
+      body: questionIndex < questions.length ? Container(
         // color: Colors.red,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }).toList()            
           ],
         ),
-      ),
+      ) : Text("Gracias!"),
     );
   }
 }
