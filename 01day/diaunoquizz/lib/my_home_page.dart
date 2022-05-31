@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:diaunoquizz/answer_button_widget.dart';
+import 'package:diaunoquizz/column_result_widget.dart';
 import 'package:diaunoquizz/question_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -49,21 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Hello world"),
       ),
-      body: questionIndex < questions.length ? Container(
-        // color: Colors.red,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            QuestionWidget(questions[questionIndex]["questionText"] as String),
-            ...(questions[questionIndex]["answers"] as List<String>).map((answerText) {
-              return AnswerButton(
-                onPressedFunction: answerQuestion,
-                buttonText: answerText,
-              );
-            }).toList()            
-          ],
-        ),
-      ) : Text("Gracias!"),
+      body: questionIndex < questions.length
+          ? ColumnResult(
+              questions: questions,
+              questionIndex: questionIndex,
+              answerQuestion: answerQuestion,
+            )
+          : Text("Gracias!"),
     );
   }
 }
