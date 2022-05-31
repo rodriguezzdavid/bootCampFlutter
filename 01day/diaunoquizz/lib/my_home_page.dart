@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 import 'package:diaunoquizz/column_result_widget.dart';
+import 'package:diaunoquizz/questions_data.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -20,26 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print("questionIdex: $questionIndex");
   }
 
-  // Formatear: Al guardar documento. ctrl + k + d. Alt + shift + f
-
-  final questions = [
-    {
-      "questionText": "Color favorito?",
-      "answers": ["Rojo", "Verde", "Amarillo", "Morado"],
-    },
-    {
-      "questionText": "Animal favorito?",
-      "answers": ["Caballo", "León", "Perro", "Gato", "Pinguino", "Elefante"],
-    },
-    {
-      "questionText": "Comida favorita?",
-      "answers": ["Gallo Pinto", "Tacos", "Chifrijo", "Casado"],
-    },
-    {
-      "questionText": "Música favorita?",
-      "answers": ["Rock", "Instrumental"],
-    },
-  ];
+  // Formatear: Al guardar documento. ctrl + k + d. Alt + shift + f  
 
   @override
   Widget build(BuildContext context) {
