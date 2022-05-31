@@ -10,7 +10,7 @@ class QuestionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       // color: Colors.purple,
       width: double.infinity,
       child: Text(

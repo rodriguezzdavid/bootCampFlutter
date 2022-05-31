@@ -13,12 +13,16 @@ class YourScore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.purple,
-      width: double.infinity,
-      child: Column(
+      color: Colors.purple,
+      height: 250,
+      child: Column(        
         mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
         children: [
-          Text("Tu score es: $totalScore"),
+          Container(
+            color: Colors.red,
+            child: Text("Tu score es: $totalScore"),
+          ),
           ElevatedButton(
             onPressed: callbackAction,
             child: Text("Reset"),

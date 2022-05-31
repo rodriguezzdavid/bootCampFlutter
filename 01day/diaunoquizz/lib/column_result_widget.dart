@@ -17,20 +17,24 @@ class ColumnResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        QuestionWidget(questions[questionIndex].title),
-        ...(questions[questionIndex].answers)
-            .map((answerText) {
-          return AnswerButton(
-            onPressedFunction: () {
-              answerQuestion(answerText.score);
-            },
-            buttonText: answerText.title,
-          );
-        }).toList()
-      ],
+    return Container(
+      // color: Colors.orange,
+      width: 300,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          QuestionWidget(questions[questionIndex].title),
+          ...(questions[questionIndex].answers)
+              .map((answerText) {
+            return AnswerButton(
+              onPressedFunction: () {
+                answerQuestion(answerText.score);
+              },
+              buttonText: answerText.title,
+            );
+          }).toList()
+        ],
+      ),
     );
   }
 }
