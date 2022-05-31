@@ -1,4 +1,5 @@
 import 'package:diaunoquizz/answer_button_widget.dart';
+import 'package:diaunoquizz/question.dart';
 import 'package:diaunoquizz/question_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class ColumnResult extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final List<Map<String, Object>> questions;
+  final List<Question> questions;
   final int questionIndex;
   final Function(int answerScore) answerQuestion;  
 
@@ -19,14 +20,14 @@ class ColumnResult extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        QuestionWidget(questions[questionIndex]["questionText"] as String),
-        ...(questions[questionIndex]["answers"] as List<Map<String, Object>>)
+        QuestionWidget(questions[questionIndex].title),
+        ...(questions[questionIndex].answers)
             .map((answerText) {
           return AnswerButton(
             onPressedFunction: () {
-              answerQuestion(answerText["score"] as int);
+              answerQuestion(answerText.score);
             },
-            buttonText: answerText["text"] as String,
+            buttonText: answerText.title,
           );
         }).toList()
       ],

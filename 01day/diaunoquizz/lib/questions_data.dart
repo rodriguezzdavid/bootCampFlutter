@@ -1,92 +1,88 @@
-// 1. Crear una clase Question: title (String), answers (List<Answer>)
-// 2. Crear una clase Answer: title (String), score (int)
-// 3. Cambiar questions que ahorita es un List<Map<String, Object>> por un List<Question>
-// 4. Inicializar la variable question
-// 5. Resolver los errores de compilación
+import 'package:diaunoquizz/question.dart';
 
 final questions = [
-  {
-    "questionText": "Color favorito?",
-    "answers": [
-      {
-        "text": "Rojo",
-        "score": 5,
-      },
-      {
-        "text": "Verde",
-        "score": 10,
-      },
-      {
-        "text": "Amarillo",
-        "score": 15,
-      },
-      {
-        "text": "Morado",
-        "score": 20,
-      },
+  Question(
+    title: "Color favorito?",
+    answers: [
+      Answer(
+        title: "Rojo",
+        score: 5,
+      ),
+      Answer(
+        title: "Verde",
+        score: 10,
+      ),
+      Answer(
+        title: "Amarillo",
+        score: 15,
+      ),
+      Answer(
+        title: "Morado",
+        score: 20,
+      ),
     ],
-  },
-  {
-    "questionText": "Animal favorito?",
-    "answers": [
-      {
-        "text": "Caballo",
-        "score": 5,
-      },
-      {
-        "text": "León",
-        "score": 10,
-      },
-      {
-        "text": "Perro",
-        "score": 15,
-      },
-      {
-        "text": "Gato",
-        "score": 20,
-      },
-      {
-        "text": "Pinguino",
-        "score": 25,
-      },
-      {
-        "text": "Elefante",
-        "score": 30,
-      },
+  ),
+  Question(
+    title: "Animal favorito?",
+    answers: [
+      Answer(
+        title: "Caballo",
+        score: 5,
+      ),
+      Answer(
+        title: "León",
+        score: 10,
+      ),
+      Answer(
+        title: "Perro",
+        score: 15,
+      ),
+      Answer(
+        title: "Gato",
+        score: 20,
+      ),
+      Answer(
+        title: "Pinguino",
+        score: 25,
+      ),
+      Answer(
+        title: "Elefante",
+        score: 30,
+      ),
     ],
-  },
-  {
-    "questionText": "Comida favorita?",
-    "answers": [
-      {
-        "text": "Gallo Pinto",
-        "score": 5,
-      },
-      {
-        "text": "Tacos",
-        "score": 10,
-      },
-      {
-        "text": "Chifrijo",
-        "score": 15,
-      },
-      {
-        "text": "Casado",
-        "score": 20,
-      },
+  ),
+  Question(
+    title: "Comida favorita?",
+    answers: [
+      Answer(
+        title: "Gallo pinto",
+        score: 5,
+      ),
+      Answer(
+        title: "Chifrijol",
+        score: 10,
+      ),
+      Answer(
+        title: "Tacos",
+        score: 15,
+      ),
+      Answer(
+        title: "Casado",
+        score: 20,
+      ),      
     ],
-  },
-  {
-    "questionText": "Música favorita?",
-    "answers": [
-      {
-        "text": "Rock",
-        "score": 5,
-      },
-      {
-        "text": "Instrumental",
-        "score": 10,
-      },      
+  ),
+  Question(
+    title: "Música favorita?",
+    answers: [
+      Answer(
+        title: "Rock",
+        score: 5,
+      ),
+      Answer(
+        title: "Instrumental",
+        score: 10,
+      ),      
     ],
-  },
+  ),
 ];
