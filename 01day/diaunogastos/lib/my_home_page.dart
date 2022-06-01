@@ -9,8 +9,8 @@ class MyHomePage extends StatelessWidget {
   List<Widget> _trasactionList() {
     List<Widget> transactionList = [];
 
-    // Crear un widget, TransactionListItem, que va a ser un Card y va a mostrar el título de la transacción
-    // TransactionListItem va a recibir en su constructor, un Transaction
+    // Modificar TransactionListItem para mostrar el amount, titulo y fecha
+    // El card debe de tomar toda el ancho de la pantalla
 
     for (var item in transactions) {
       transactionList.add(

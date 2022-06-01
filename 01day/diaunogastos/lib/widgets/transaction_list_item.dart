@@ -12,7 +12,20 @@ class TransactionListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Text(transaction.title),
+      child: Container(
+        // width: double.infinity,
+        child: Row(
+          children: [
+            Text(transaction.amount.toString()),
+            Column(
+              children: [
+                Text(transaction.title),
+                Text(transaction.date.toString()),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
