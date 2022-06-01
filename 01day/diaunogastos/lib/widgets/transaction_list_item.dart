@@ -1,5 +1,6 @@
 import 'package:diaunogastos/models/transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class TransactionListItem extends StatelessWidget {
   const TransactionListItem({
@@ -40,7 +41,7 @@ class TransactionListItem extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  transaction.date.toString(),
+                  DateFormat("dd/MM/yyyy").format(transaction.date),
                   style: const TextStyle(
                     color: Colors.grey,
                   ),

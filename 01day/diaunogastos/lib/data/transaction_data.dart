@@ -11,7 +11,7 @@ final List<Transaction> transactions = [
     id: "2",
     title: "Internet",
     amount: 100,
-    date: DateTime.now(),
+    date: DateTime.now().add(const Duration(days: 2)),
   ),
   Transaction(
     id: "3",
