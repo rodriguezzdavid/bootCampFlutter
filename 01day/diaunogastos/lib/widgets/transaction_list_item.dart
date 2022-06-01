@@ -18,6 +18,7 @@ class TransactionListItem extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.black,
@@ -28,9 +29,22 @@ class TransactionListItem extends StatelessWidget {
               child: Text(transaction.amount.toString()),
             ),
             Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(transaction.title),
-                Text(transaction.date.toString()),
+                Text(
+                  transaction.title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  transaction.date.toString(),
+                  style: const TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
               ],
             ),
           ],
