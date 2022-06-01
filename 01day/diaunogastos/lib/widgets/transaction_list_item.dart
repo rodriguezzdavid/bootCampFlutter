@@ -16,7 +16,17 @@ class TransactionListItem extends StatelessWidget {
         // width: double.infinity,
         child: Row(
           children: [
-            Text(transaction.amount.toString()),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.black,
+                  width: 2,
+                ),
+                //color: Colors.blue,
+              ),
+              child: Text(transaction.amount.toString()),
+            ),
             Column(
               children: [
                 Text(transaction.title),
