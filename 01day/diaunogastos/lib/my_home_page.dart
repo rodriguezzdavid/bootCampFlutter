@@ -1,4 +1,6 @@
 import 'package:diaunogastos/data/transaction_data.dart';
+import 'package:diaunogastos/models/transaction.dart';
+import 'package:diaunogastos/widgets/transaction_list_item.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -12,9 +14,7 @@ class MyHomePage extends StatelessWidget {
 
     for (var item in transactions) {
       transactionList.add(
-        Card(
-          child: Text(item.title),
-        ),
+        TransactionListItem(transaction: item),        
       );
     }
 
@@ -55,3 +55,5 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+
