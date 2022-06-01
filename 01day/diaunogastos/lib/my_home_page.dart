@@ -9,8 +9,18 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("My expenses"),
       ),
-      body: const Center(
-        child: Text("Clean app"),
+      body: Column(
+        children: const [
+          Card(
+            child: SizedBox(
+              width: 200,
+              child: Text("Chart"),
+            ),
+          ),
+          Card(
+            child: Text("Transactionlist"),
+          ),
+        ],
       ),
     );
   }
