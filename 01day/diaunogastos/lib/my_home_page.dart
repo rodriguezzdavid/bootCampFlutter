@@ -14,15 +14,25 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Card(
+          children: [
+            const Card(
               child: SizedBox(
                 width: 200,
                 child: Text("Chart"),
               ),
             ),
-            Card(
-              child: Text("Transactionlist"),
+            Column(
+              children: const [
+                Card(
+                  child: Text("Gas"),
+                ),
+                Card(
+                  child: Text("Shoes"),
+                ),
+                Card(
+                  child: Text("Food"),
+                ),
+              ],
             ),
           ],
         ),
