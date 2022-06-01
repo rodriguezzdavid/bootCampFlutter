@@ -1,16 +1,18 @@
 import 'package:diaunogastos/data/transaction_data.dart';
-import 'package:diaunogastos/models/transaction.dart';
 import 'package:diaunogastos/widgets/transaction_list_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   List<Widget> _trasactionList() {
     List<Widget> transactionList = [];
-
-    // Modificar TransactionListItem para mostrar el amount, titulo y fecha
-    // El card debe de tomar toda el ancho de la pantalla
 
     for (var item in transactions) {
       transactionList.add(
@@ -20,6 +22,9 @@ class MyHomePage extends StatelessWidget {
 
     return transactionList;
   }
+
+  String? titleTextInput;
+  String? amountTextInput;
 
   @override
   Widget build(BuildContext context) {
@@ -48,18 +53,28 @@ class MyHomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const TextField(
-                      decoration: InputDecoration(
+                    TextField(
+                      decoration: const InputDecoration(
                         labelText: "Título",
                       ),
+                      onChanged: (value) {                        
+                        titleTextInput = value;
+                      },                      
                     ),
-                    const TextField(
-                      decoration: InputDecoration(
+                     TextField(
+                      decoration: const InputDecoration(
                         labelText: "Cantidad",
                       ),
+                      onChanged: (value) {
+                        amountTextInput = value;
+                      },
+                      keyboardType: TextInputType.number,                      
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        print("titleTextInput: $titleTextInput");
+                        print("amountTextInput: $amountTextInput");
+                      },
                       child: const Text("Guardar"),
                     ),
                   ],
