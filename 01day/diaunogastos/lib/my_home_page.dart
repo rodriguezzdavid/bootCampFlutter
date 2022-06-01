@@ -9,18 +9,23 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("My expenses"),
       ),
-      body: Column(
-        children: const [
-          Card(
-            child: SizedBox(
-              width: 200,
-              child: Text("Chart"),
+      body: Container(
+        // color: Colors.purple,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Card(
+              child: SizedBox(
+                width: 200,
+                child: Text("Chart"),
+              ),
             ),
-          ),
-          Card(
-            child: Text("Transactionlist"),
-          ),
-        ],
+            Card(
+              child: Text("Transactionlist"),
+            ),
+          ],
+        ),
       ),
     );
   }
