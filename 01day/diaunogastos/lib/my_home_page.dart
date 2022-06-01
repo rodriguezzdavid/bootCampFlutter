@@ -14,7 +14,7 @@ class MyHomePage extends StatelessWidget {
 
     for (var item in transactions) {
       transactionList.add(
-        TransactionListItem(transaction: item),        
+        TransactionListItem(transaction: item),
       );
     }
 
@@ -39,15 +39,32 @@ class MyHomePage extends StatelessWidget {
                 child: Text("Chart"),
               ),
             ),
-            // Column(
-            //   children: transactions.map((transaction) {
-            //     return Card(
-            //       child: Text(transaction.title),
-            //     );
-            //   }).toList()
-            // ),
             Column(
               children: _trasactionList(),
+            ),
+            Card(
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const TextField(
+                      decoration: InputDecoration(
+                        labelText: "Título",
+                      ),
+                    ),
+                    const TextField(
+                      decoration: InputDecoration(
+                        labelText: "Cantidad",
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text("Guardar"),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -55,5 +72,3 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-
-
