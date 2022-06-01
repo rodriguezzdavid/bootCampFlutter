@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 
 class NewTransactionCard extends StatelessWidget {
-  NewTransactionCard({Key? key}) : super(key: key);
+  NewTransactionCard({
+    required this.callbackFunction,
+    Key? key,
+  }) : super(key: key);
 
   // final titleController = TextEditingController();
   // final amountController = TextEditingController();
 
   final titleController = TextEditingController(text: "Comida controller");
   final amountController = TextEditingController(text: "300");
+
+  final Function(String title, double amount) callbackFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +37,9 @@ class NewTransactionCard extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                print("titleTextInput: ${titleController.text}");
-                print("amountTextInput: ${amountController.text}");
+                final title = titleController.text;
+                final amount = double.parse(amountController.text);
+                callbackFunction(title, amount);
               },
               child: const Text("Guardar"),
             ),
