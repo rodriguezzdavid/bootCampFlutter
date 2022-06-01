@@ -9,7 +9,10 @@ class UserTransactionState extends StatefulWidget {
   State<UserTransactionState> createState() => _UserTransactionStateState();
 }
 
-class _UserTransactionStateState extends State<UserTransactionState> {
+class _UserTransactionStateState extends State<UserTransactionState> {  
+  void _addNewTransaction() {
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(

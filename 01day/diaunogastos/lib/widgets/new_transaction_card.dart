@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class NewTransactionCard extends StatelessWidget {
   NewTransactionCard({Key? key}) : super(key: key);
 
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
+  // final titleController = TextEditingController();
+  // final amountController = TextEditingController();
 
-  // final titleController = TextEditingController(text: "Comida controller");
-  // final amountController = TextEditingController(text: "300");
+  final titleController = TextEditingController(text: "Comida controller");
+  final amountController = TextEditingController(text: "300");
 
   @override
   Widget build(BuildContext context) {
