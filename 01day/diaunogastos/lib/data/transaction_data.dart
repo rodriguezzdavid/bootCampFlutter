@@ -9,7 +9,7 @@ final List<Transaction> transactions = [
   ),
   Transaction(
     id: "2",
-    title: "Shoes",
+    title: "Internet",
     amount: 100,
     date: DateTime.now(),
   ),

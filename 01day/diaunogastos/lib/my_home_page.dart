@@ -1,7 +1,22 @@
+import 'package:diaunogastos/data/transaction_data.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
+
+  List<Widget> _trasactionList() {
+    List<Widget> transactionList = [];
+
+    for (var item in transactions) {
+      transactionList.add(
+        Card(
+          child: Text(item.title),
+        ),
+      );
+    }
+
+    return transactionList;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +36,15 @@ class MyHomePage extends StatelessWidget {
                 child: Text("Chart"),
               ),
             ),
+            // Column(
+            //   children: transactions.map((transaction) {
+            //     return Card(
+            //       child: Text(transaction.title),
+            //     );
+            //   }).toList()
+            // ),
             Column(
-              children: const [
-                Card(
-                  child: Text("Gas"),
-                ),
-                Card(
-                  child: Text("Shoes"),
-                ),
-                Card(
-                  child: Text("Food"),
-                ),
-              ],
+              children: _trasactionList(),
             ),
           ],
         ),
