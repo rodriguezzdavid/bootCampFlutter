@@ -27,7 +27,9 @@ class TransactionListItem extends StatelessWidget {
                 ),
                 //color: Colors.blue,
               ),
-              child: Text(transaction.amount.toString()),
+              child: Text(
+                "\$" + transaction.amount.toStringAsFixed(2)
+              ),
             ),
             Column(
               // mainAxisAlignment: MainAxisAlignment.start,

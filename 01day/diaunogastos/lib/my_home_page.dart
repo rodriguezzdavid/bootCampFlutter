@@ -1,16 +1,16 @@
 import 'package:diaunogastos/data/transaction_data.dart';
 import 'package:diaunogastos/widgets/transaction_list_item.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class MyHomePage extends StatelessWidget {
+  MyHomePage({Key? key}) : super(key: key);
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
-class _MyHomePageState extends State<MyHomePage> {
+  // final titleController = TextEditingController(text: "Comida controller");
+  // final amountController = TextEditingController(text: "300");
+
   List<Widget> _trasactionList() {
     List<Widget> transactionList = [];
 
@@ -22,9 +22,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return transactionList;
   }
-
-  String? titleTextInput;
-  String? amountTextInput;
 
   @override
   Widget build(BuildContext context) {
@@ -57,23 +54,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration: const InputDecoration(
                         labelText: "Título",
                       ),
-                      onChanged: (value) {                        
-                        titleTextInput = value;
-                      },                      
+                      controller: titleController,
                     ),
-                     TextField(
+                    TextField(
                       decoration: const InputDecoration(
                         labelText: "Cantidad",
                       ),
-                      onChanged: (value) {
-                        amountTextInput = value;
-                      },
-                      keyboardType: TextInputType.number,                      
+                      controller: amountController,
+                      keyboardType: TextInputType.number,
                     ),
                     TextButton(
                       onPressed: () {
-                        print("titleTextInput: $titleTextInput");
-                        print("amountTextInput: $amountTextInput");
+                        print("titleTextInput: ${titleController.text}");
+                        print("amountTextInput: ${amountController.text}");
                       },
                       child: const Text("Guardar"),
                     ),
