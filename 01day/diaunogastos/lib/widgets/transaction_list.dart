@@ -9,26 +9,18 @@ class TransactionList extends StatelessWidget {
   }) : super(key: key);
 
   final List<Transaction> transactions;
-
-  List<Widget> _trasactionList() {
-    List<Widget> transactionList = [];
-
-    for (var item in transactions) {
-      transactionList.add(
-        TransactionListItem(transaction: item),
-      );
-    }
-
-    return transactionList;
-  }
-
+    
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.orange,
       height: 250,
-      child: ListView(
-        children: _trasactionList(),
+      child: ListView.builder(
+        itemBuilder: (ctx, index) {
+          final transactionItem = transactions[index];
+          return TransactionListItem(transaction: transactionItem);
+        },
+        itemCount: transactions.length,
       ),
     );
   }
