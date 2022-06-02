@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigationclass/data/dummy_data.dart';
+import 'package:navigationclass/widgets/categories_grid_item.dart';
 
 class CategoriesGrid extends StatelessWidget {
   const CategoriesGrid({Key? key}) : super(key: key);
@@ -14,22 +15,10 @@ class CategoriesGrid extends StatelessWidget {
         mainAxisSpacing: 20,
       ),
       children: dummyCategories.map((category) {
-        return Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                category.color.withOpacity(0.7),
-                category.color,
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,              
-            ),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          padding: const EdgeInsets.all(15),
-          child: Text(category.title),
+        return CategoriesGridItem(
+          category: category,
         );
-      }).toList()
+      }).toList(),
     );
   }
 }
