@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigationclass/models/category.dart';
+import 'package:navigationclass/screens/category_details_screen.dart';
 
 class CategoriesGridItem extends StatelessWidget {
   const CategoriesGridItem({
@@ -11,24 +12,41 @@ class CategoriesGridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final theme = Theme.of(context);
 
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            category.color.withOpacity(0.7),
-            category.color,
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+    void _selectedCategory() {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (ctx) {
+            return const CategoryDetailsScreen();
+          },
         ),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      padding: const EdgeInsets.all(15),
-      child: Text(
-        category.title,
-        style: textTheme.subtitle1,
+      );
+    }
+
+    return InkWell(
+      splashColor: theme.primaryColor,
+      borderRadius: BorderRadius.circular(15),
+      onTap: () {
+        _selectedCategory();
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              category.color.withOpacity(0.7),
+              category.color,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        padding: const EdgeInsets.all(15),
+        child: Text(
+          category.title,
+          style: theme.textTheme.subtitle1,
+        ),
       ),
     );
   }
