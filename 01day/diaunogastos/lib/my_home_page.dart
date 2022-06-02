@@ -1,6 +1,10 @@
 import 'package:diaunogastos/widgets/user_transaction_state.dart';
 import 'package:flutter/material.dart';
 
+// 1. MyHomePage a un StatefulWidget
+// 2. Mover el State de UserTransactionState a MyHomePage
+// 3. Eliminar UserTransactionState
+
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
