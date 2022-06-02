@@ -12,12 +12,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> transactions = [
-    Transaction(
-      id: "1",
-      title: "Gas",
-      amount: 200,
-      date: DateTime.now(),
-    ),
+    // Transaction(
+    //   id: "1",
+    //   title: "Gas",
+    //   amount: 200,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   void _addNewTransaction(String titleParam, double amountParam) {
@@ -42,39 +42,55 @@ class _MyHomePageState extends State<MyHomePage> {
     showModalBottomSheet(
       context: context,
       builder: (ctx) {
-        return NewTransactionCard(
-          callbackFunction: _addNewTransaction,
-        );        
+        return FractionallySizedBox(
+          heightFactor: 0.9,
+          child: NewTransactionCard(
+            callbackFunction: _addNewTransaction,
+          ),
+        );
       },
+      isDismissible: false,
+      isScrollControlled: true,
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+
+    print("mediaQuery.size.height: ${mediaQuery.size.height}");
+    print("mediaQuery.size.width: ${mediaQuery.size.width}");
+
+    final appBar = AppBar(
+      title: const Text("My expenses"),
+    );
+
+    final totalHeight = mediaQuery.size.height -
+        appBar.preferredSize.height -
+        mediaQuery.padding.top;
+
+    final contianerOneHeight = totalHeight * 0.25;
+    final contianerTwoHeight = totalHeight * 0.75;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("My expenses"),
-      ),
+      appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Card(
-              child: SizedBox(
-                width: 200,
-                child: Text("Chart"),
-              ),
+            Container(
+              color: Colors.red,
+              height: contianerOneHeight,
+              width: double.infinity,
+              child: Text("Chart"),
             ),
-            Column(
-              children: [
-                TransactionList(
-                  transactions: transactions,
-                ),
-                // NewTransactionCard(
-                //   callbackFunction: _addNewTransaction,
-                // ),
-              ],
+            Container(
+              color: Colors.yellow,
+              height: contianerTwoHeight,
+              child: TransactionList(
+                transactions: transactions,
+              ),
             ),
           ],
         ),
