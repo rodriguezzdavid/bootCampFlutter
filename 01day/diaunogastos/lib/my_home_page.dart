@@ -38,6 +38,17 @@ class _MyHomePageState extends State<MyHomePage> {
     // print("transactions.length: ${transactions.length}");
   }
 
+  void _startAddNewTransaction() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) {
+        return NewTransactionCard(
+          callbackFunction: _addNewTransaction,
+        );        
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,16 +71,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 TransactionList(
                   transactions: transactions,
                 ),
-                NewTransactionCard(
-                  callbackFunction: _addNewTransaction,
-                ),
+                // NewTransactionCard(
+                //   callbackFunction: _addNewTransaction,
+                // ),
               ],
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _startAddNewTransaction,
         child: const Icon(Icons.add),
       ),
     );

@@ -18,6 +18,7 @@ class NewTransactionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
+        height: 250,
         padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
