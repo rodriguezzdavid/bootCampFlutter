@@ -65,12 +65,15 @@ class _MyHomePageState extends State<MyHomePage> {
       title: const Text("My expenses"),
     );
 
-    final totalHeight = mediaQuery.size.height -
+    final screenHeight = mediaQuery.size.height -
         appBar.preferredSize.height -
         mediaQuery.padding.top;
 
-    final contianerOneHeight = totalHeight * 0.25;
-    final contianerTwoHeight = totalHeight * 0.75;
+    final contianerOneHeight = screenHeight * 0.25;
+    final contianerTwoHeight = screenHeight * 0.75;
+
+    print("totalHeight: $screenHeight");
+    print("contianerTwoHeight: $contianerTwoHeight");
 
     return Scaffold(
       appBar: appBar,
@@ -88,9 +91,28 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               color: Colors.yellow,
               height: contianerTwoHeight,
-              child: TransactionList(
-                transactions: transactions,
-              ),
+              alignment: Alignment.topCenter,
+              // child: Container(
+              //   height: contianerTwoHeight * 0.50,                
+              //   color: Colors.purple,
+              // ),
+              child: LayoutBuilder(
+                builder: (ctx, constraints) {
+                  // return Column(
+                  //   children: [
+                  //     Text("Constraint Height: ${constraints.maxHeight}")
+                  //   ],
+                  // );
+                  return Container(
+                    height: constraints.maxHeight * 0.50,
+                    // width: 200,
+                    color: Colors.purple,
+                    child: TransactionList(
+                      transactions: transactions,
+                    ),
+                  );
+                },
+              ),              
             ),
           ],
         ),
