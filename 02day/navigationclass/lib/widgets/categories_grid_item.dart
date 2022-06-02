@@ -10,25 +10,25 @@ class CategoriesGridItem extends StatelessWidget {
 
   final Category category;
 
+  void _selectedCategory(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) {
+          return const CategoryDetailsScreen();
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    void _selectedCategory() {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (ctx) {
-            return const CategoryDetailsScreen();
-          },
-        ),
-      );
-    }
+    final theme = Theme.of(context);    
 
     return InkWell(
       splashColor: theme.primaryColor,
       borderRadius: BorderRadius.circular(15),
       onTap: () {
-        _selectedCategory();
+        _selectedCategory(context);
       },
       child: Container(
         decoration: BoxDecoration(
