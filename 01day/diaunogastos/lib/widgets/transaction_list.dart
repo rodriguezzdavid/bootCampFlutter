@@ -24,8 +24,14 @@ class TransactionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: _trasactionList(),
+    return Container(
+      color: Colors.orange,
+      height: 250,
+      child: SingleChildScrollView(
+        child: Column(
+          children: _trasactionList(),
+        ),
+      ),
     );
   }
 }
