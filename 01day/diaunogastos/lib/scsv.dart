@@ -7,7 +7,7 @@ class SingleChildPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("SingleChildScrollView"),
+        title: const Text("SingleChildScrollView"),
       ),
       body: SingleChildScrollView(
         child: Column(
