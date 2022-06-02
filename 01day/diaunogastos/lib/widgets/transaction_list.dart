@@ -28,7 +28,8 @@ class TransactionList extends StatelessWidget {
       color: Colors.orange,
       height: 250,
       child: SingleChildScrollView(
-        child: Column(
+        scrollDirection: Axis.horizontal,
+        child: Row(
           children: _trasactionList(),
         ),
       ),
