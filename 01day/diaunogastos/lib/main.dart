@@ -1,4 +1,5 @@
 import 'package:diaunogastos/my_home_page.dart';
+import 'package:diaunogastos/scsv.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),      
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
+      // home: const MyHomePage(),
+      home: const SingleChildPage(),
     );
   }
 }
