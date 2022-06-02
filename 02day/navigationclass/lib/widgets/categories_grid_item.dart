@@ -11,6 +11,8 @@ class CategoriesGridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -24,7 +26,10 @@ class CategoriesGridItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       padding: const EdgeInsets.all(15),
-      child: Text(category.title),
+      child: Text(
+        category.title,
+        style: textTheme.subtitle1,
+      ),
     );
   }
 }

@@ -16,7 +16,7 @@ class CategoriesScreen extends StatelessWidget {
           left: 5,
           right: 5,
         ),
-        child: CategoriesGrid(),
+        child: const CategoriesGrid(),
       ),
     );
   }
