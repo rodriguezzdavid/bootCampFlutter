@@ -58,8 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
 
-    print("mediaQuery.size.height: ${mediaQuery.size.height}");
-    print("mediaQuery.size.width: ${mediaQuery.size.width}");
+    // print("mediaQuery.size.height: ${mediaQuery.size.height}");
+    // print("mediaQuery.size.width: ${mediaQuery.size.width}");
 
     final appBar = AppBar(
       title: const Text("My expenses"),
@@ -70,52 +70,64 @@ class _MyHomePageState extends State<MyHomePage> {
         mediaQuery.padding.top;
 
     final contianerOneHeight = screenHeight * 0.25;
-    final contianerTwoHeight = screenHeight * 0.75;
+    double contianerTwoHeight = screenHeight * 0.75;
 
-    print("totalHeight: $screenHeight");
-    print("contianerTwoHeight: $contianerTwoHeight");
+    // print("totalHeight: $screenHeight");
+    // print("contianerTwoHeight: $contianerTwoHeight");
+
+    print("mediaQuery.orientation.name: ${mediaQuery.orientation.name}");
+
+    final isLandscape = mediaQuery.orientation == Orientation.landscape;
+
+    if(isLandscape) {
+      contianerTwoHeight = screenHeight;
+    }
 
     return Scaffold(
       appBar: appBar,
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              color: Colors.red,
-              height: contianerOneHeight,
-              width: double.infinity,
-              child: Text("Chart"),
+      body: OrientationBuilder(
+        builder: (ctx, orientation) {
+          print("orientation");
+          print(orientation);
+          return SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                OrientationBuilder(
+                  builder: (ctx2, orientation2) {
+                    print("orientation2");
+                    print(orientation2);
+                    return Container(
+                      color: Colors.red,
+                      height: isLandscape ? 0 : contianerOneHeight,
+                      width: double.infinity,
+                      // child: orientation2 == Orientation.portrait
+                      //     ? Text("Portrait")
+                      //     : Text("Landscape"),
+                      child: Text(orientation.name),                          
+                    );
+                  },
+                ),
+                Container(
+                  color: Colors.yellow,
+                  height: contianerTwoHeight,
+                  alignment: Alignment.topCenter,
+                  child: LayoutBuilder(
+                    builder: (ctx, constraints) {
+                      return Container(
+                        color: Colors.purple,
+                        child: TransactionList(
+                          transactions: transactions,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
-            Container(
-              color: Colors.yellow,
-              height: contianerTwoHeight,
-              alignment: Alignment.topCenter,
-              // child: Container(
-              //   height: contianerTwoHeight * 0.50,                
-              //   color: Colors.purple,
-              // ),
-              child: LayoutBuilder(
-                builder: (ctx, constraints) {
-                  // return Column(
-                  //   children: [
-                  //     Text("Constraint Height: ${constraints.maxHeight}")
-                  //   ],
-                  // );
-                  return Container(
-                    height: constraints.maxHeight * 0.50,
-                    // width: 200,
-                    color: Colors.purple,
-                    child: TransactionList(
-                      transactions: transactions,
-                    ),
-                  );
-                },
-              ),              
-            ),
-          ],
-        ),
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _startAddNewTransaction,
