@@ -27,11 +27,8 @@ class TransactionList extends StatelessWidget {
     return Container(
       color: Colors.orange,
       height: 250,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: _trasactionList(),
-        ),
+      child: ListView(
+        children: _trasactionList(),
       ),
     );
   }
