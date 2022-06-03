@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getxlearning/pages/home_page.dart';
+import 'package:get/get.dart';
+import 'package:getxlearning/pages/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,13 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'Flutter GetX',
       theme: ThemeData(        
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const SplashPage(),
     );
   }
 }
