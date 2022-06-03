@@ -1,4 +1,25 @@
 import 'package:get/get.dart';
+import 'package:getxlearning/api/users_api.dart';
+import 'package:getxlearning/models/app_user.dart';
 
-class UsersController extends GetxController {  
+class UsersController extends GetxController {
+  final _usersAPI = UsersAPI();
+  List<AppUser> users = [];
+  bool _loading = true;
+
+  bool get isLoading {
+    return _loading;
+  }
+
+  @override
+  Future<void> onReady() async {
+    super.onReady();
+    await _loadUsersAsync();
+  }
+
+  Future<void> _loadUsersAsync() async {
+    users = await _usersAPI.getUsers(1);
+    _loading = false;
+    update();
+  }
 }

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxlearning/controllers/users_controller.dart';
+import 'package:getxlearning/widgets/user_list.dart';
 
 class UsersPage extends StatelessWidget {
   const UsersPage({Key? key}) : super(key: key);
@@ -15,11 +16,7 @@ class UsersPage extends StatelessWidget {
           appBar: AppBar(
             title: const Text("Users"),
           ),
-          body: const Center(
-            child: Text(
-              "Users page",
-            ),
-          ),
+          body: const UserList(),
         );
       },
     );
