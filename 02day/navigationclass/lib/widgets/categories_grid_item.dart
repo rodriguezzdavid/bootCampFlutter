@@ -14,7 +14,9 @@ class CategoriesGridItem extends StatelessWidget {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) {
-          return const CategoryDetailsScreen();
+          return CategoryDetailsScreen(
+            category: category,
+          );
         },
       ),
     );
@@ -22,7 +24,7 @@ class CategoriesGridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);    
+    final theme = Theme.of(context);
 
     return InkWell(
       splashColor: theme.primaryColor,

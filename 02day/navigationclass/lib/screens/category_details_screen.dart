@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:navigationclass/models/category.dart';
 
 class CategoryDetailsScreen extends StatelessWidget {
-  const CategoryDetailsScreen({Key? key}) : super(key: key);
+  const CategoryDetailsScreen({
+    required this.category,
+    Key? key,
+  }) : super(key: key);
+
+  final Category category;
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +16,7 @@ class CategoryDetailsScreen extends StatelessWidget {
         title: Text("Category details"),
       ),
       body: Center(
-        child: Text("Category"),
+        child: Text(category.title),
       ),
     );
   }
