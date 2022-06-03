@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:diaunogastos/models/transaction.dart';
 import 'package:diaunogastos/widgets/new_transaction_card.dart';
 import 'package:diaunogastos/widgets/transaction_list.dart';

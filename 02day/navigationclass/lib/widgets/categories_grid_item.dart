@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:navigationclass/models/category.dart';
-import 'package:navigationclass/screens/category_details_screen.dart';
 
 class CategoriesGridItem extends StatelessWidget {
   const CategoriesGridItem({

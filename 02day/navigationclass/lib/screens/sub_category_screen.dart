@@ -10,7 +10,7 @@ class SubCategoryScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sub category"),
+        title: const Text("Sub category"),
       ),
       body: Center(
         child: Text(category.subCategory!.title),

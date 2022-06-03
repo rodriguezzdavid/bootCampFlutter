@@ -17,7 +17,7 @@ class ColumnResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // color: Colors.orange,
       width: 300,
       child: Column(

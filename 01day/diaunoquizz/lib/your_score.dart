@@ -25,7 +25,7 @@ class YourScore extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: callbackAction,
-            child: Text("Reset"),
+            child: const Text("Reset"),
           ),
         ],
       ),

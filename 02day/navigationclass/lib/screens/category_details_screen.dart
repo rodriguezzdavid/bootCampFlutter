@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:navigationclass/models/category.dart';
 
@@ -25,7 +27,7 @@ class CategoryDetailsScreen extends StatelessWidget {
             
     return Scaffold(
       appBar: AppBar(
-        title: Text("Category details"),
+        title: const Text("Category details"),
       ),
       body: Center(
         child: Column(
@@ -39,7 +41,7 @@ class CategoryDetailsScreen extends StatelessWidget {
                   arguments: category,
                 );
               },
-              child: Text("Sub category title"),
+              child: const Text("Sub category title"),
             )
           ],
         ),
