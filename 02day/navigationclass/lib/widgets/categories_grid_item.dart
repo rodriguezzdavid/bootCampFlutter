@@ -13,12 +13,17 @@ class CategoriesGridItem extends StatelessWidget {
   void _selectedCategory(BuildContext context) {
     Navigator.of(context).pushNamed(
       "/category-details",
-      // arguments: {
-      //   "id": 1,
-      //   "list": [],
-      //   "category": category,
-      // },
-      arguments: category,
+      arguments: {
+        "id": 1,
+        "sub-category": {
+          "sub-title": "This is a subtitle",
+        },
+        "details": {
+          1: "This is a Map<int, String>",
+        },
+        "category": category,
+      },
+      // arguments: category,
     );
   }
 
