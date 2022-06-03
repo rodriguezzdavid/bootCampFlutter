@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, unnecessary_overrides
 
 import 'package:get/get.dart';
 
@@ -12,25 +12,26 @@ class HomeController extends GetxController {
   @override
   void onInit() {    
     super.onInit();
-    print("HomeController:onInit same as initState in Stateful widget");
+    // print("HomeController:onInit same as initState in Stateful widget");
   }
 
   @override
   void onReady() {    
     super.onReady();
-    print("HomeController:onReady... here we can navigate, show snackbars and so on");
+    // print("HomeController:onReady... here we can navigate, show snackbars and so on");
   }
 
   @override
   void onClose() {    
     super.onClose();
-    print("HomeController:onClose... dispose resources");
+    // print("HomeController:onClose... dispose resources");
   }
 
   void increment() {    
-    print("_counter: $_counter");
+    // print("_counter: $_counter");
     _counter++;
-    print("_counter: $_counter");
+    // print("_counter: $_counter");
+    // update(["counter-text-id"]);
     update();
   }
 }

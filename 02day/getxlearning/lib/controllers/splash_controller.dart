@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, unnecessary_overrides
 
 import 'package:get/get.dart';
 import 'package:getxlearning/pages/home_page.dart';
@@ -7,21 +7,21 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    print("SplashController:onInit same as initState in Stateful widget");
+    // print("SplashController:onInit same as initState in Stateful widget");
   }
 
   @override
   Future<void> onReady() async {
     super.onReady();
-    print(
-        "SplashController:onReady... here we can navigate, show snackbars and so on");
+    // print(
+    //     "SplashController:onReady... here we can navigate, show snackbars and so on");
     await loadDataAsync();
   }
 
   Future<void> loadDataAsync() async {
-    print("Loading user data...");
+    // print("Loading user data...");
     await Future.delayed(const Duration(seconds: 3));
-    print("The loading was completed");
+    // print("The loading was completed");
 
     // Get.to(() {
     //   return const HomePage();
@@ -35,6 +35,6 @@ class SplashController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    print("SplashController:onClose... dispose resources");
+    // print("SplashController:onClose... dispose resources");
   }
 }
