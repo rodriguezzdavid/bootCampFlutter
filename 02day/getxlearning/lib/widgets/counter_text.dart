@@ -7,11 +7,11 @@ class CounterText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("CounterText build");
+    // print("CounterText build");
     return GetBuilder<HomeController>(
       // id: "counter-text-id",
       builder: (homeController) {
-        print("CounterText getx builder");
+        // print("CounterText getx builder");
         return Text(
           "${homeController.counter}",
           style: Theme.of(context).textTheme.headline4,

@@ -10,11 +10,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("HomePage build");
+    // print("HomePage build");
     return GetBuilder<HomeController>(
       init: HomeController(),
       builder: (homeController) {
-        print("HomePage getx builder");
+        // print("HomePage getx builder");
         return Scaffold(
           appBar: AppBar(
             title: const Text("GetX"),
