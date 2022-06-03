@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigationclass/screens/categories_screen.dart';
 import 'package:navigationclass/screens/category_details_screen.dart';
+import 'package:navigationclass/screens/sub_category_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
     // "/category-details": (ctx) => const CategoryDetailsScreen()
     "/category-details": (ctx) {
       return const CategoryDetailsScreen();
-    }
+    },
+    "/category-subdetails": (ctx) => const SubCategoryScreen()
   };
 
   @override

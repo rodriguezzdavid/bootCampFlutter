@@ -22,11 +22,7 @@ class CategoryDetailsScreen extends StatelessWidget {
     final details = arguments["details"] as Map<int, Object>;
 
     final mapInfo = details[1] as String;
-
-    // 1. Crear una nueva pantalla
-    // 2. Agregar navegación con namedRoute y navegar a la nueva pantalla, enviándole la sub categoria
-    // 3. Mostrar la título de la subcategoria centrado en la pantalla
-
+            
     return Scaffold(
       appBar: AppBar(
         title: Text("Category details"),
@@ -37,7 +33,12 @@ class CategoryDetailsScreen extends StatelessWidget {
           children: [
             Text(category.title),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  "/category-subdetails",
+                  arguments: category,
+                );
+              },
               child: Text("Sub category title"),
             )
           ],
