@@ -1,6 +1,7 @@
 class AppUser {
   int id;
   String email, firstName, lastName, avatar;
+  bool isFavorite = false;
 
   AppUser({
     required this.id,
