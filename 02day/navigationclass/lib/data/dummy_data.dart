@@ -6,6 +6,10 @@ final dummyCategories = [
     id: "c1",
     title: 'Italian',
     color: Colors.purple,
+    subCategory: SubCategory(
+      id: "sc1",
+      title: "Pasta",
+    ),
   ),
   Category(
     id: 'c2',
