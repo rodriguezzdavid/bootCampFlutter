@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigationclass/screens/categories_screen.dart';
+import 'package:navigationclass/screens/category_details_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,6 +31,13 @@ class MyApp extends StatelessWidget {
         ),
   );
 
+  final appRoutes = {
+    // "/category-details": (ctx) => const CategoryDetailsScreen()
+    "/category-details": (ctx) {
+      return const CategoryDetailsScreen();
+    }
+  };
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,6 +45,7 @@ class MyApp extends StatelessWidget {
       theme: themeData,
       home: const CategoriesScreen(),
       debugShowCheckedModeBanner: false,
+      routes: appRoutes,
     );
   }
 }

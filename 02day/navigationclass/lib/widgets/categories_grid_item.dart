@@ -11,15 +11,7 @@ class CategoriesGridItem extends StatelessWidget {
   final Category category;
 
   void _selectedCategory(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (ctx) {
-          return CategoryDetailsScreen(
-            category: category,
-          );
-        },
-      ),
-    );
+    Navigator.of(context).pushNamed("/category-details");
   }
 
   @override
