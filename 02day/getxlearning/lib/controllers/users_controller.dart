@@ -11,6 +11,18 @@ class UsersController extends GetxController {
     return _loading;
   }
 
+  int get totalFavorites {
+    int totalFavorites = 0;
+
+    for (var item in users) {
+      if(item.isFavorite) {
+        totalFavorites++;
+      }
+    }
+
+    return totalFavorites;
+  }
+
   @override
   Future<void> onReady() async {
     super.onReady();
@@ -20,6 +32,11 @@ class UsersController extends GetxController {
   Future<void> _loadUsersAsync() async {
     users = await _usersAPI.getUsers(1);
     _loading = false;
-    update();
+    update(["user-list"]);
+  }
+
+  changeFavoriteStatus(AppUser user) {
+    user.isFavorite = !user.isFavorite;
+    update(["user-list"]);
   }
 }
