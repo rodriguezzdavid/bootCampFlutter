@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print, unnecessary_overrides
 
 import 'package:get/get.dart';
+import 'package:getxlearning/pages/products_page.dart';
 import 'package:getxlearning/pages/users_page.dart';
 
 class SplashController extends GetxController {
@@ -21,10 +22,13 @@ class SplashController extends GetxController {
   Future<void> loadDataAsync() async {
     // print("Loading user data...");
     await Future.delayed(const Duration(seconds: 3));
-    // print("The loading was completed");    
+    // print("The loading was completed");
 
+    // Get.off(() {
+    //   return const UsersPage();
+    // });
     Get.off(() {
-      return const UsersPage();
+      return const ProductsPage();
     });
   }
 

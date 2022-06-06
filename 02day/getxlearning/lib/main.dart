@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getxlearning/controllers/product_controller.dart';
 import 'package:getxlearning/pages/splash_page.dart';
 
 void main() {
@@ -8,9 +9,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-        
+
   @override
   Widget build(BuildContext context) {
+
+    Get.put(ProductController());
+
     return GetMaterialApp(
       title: 'Flutter GetX',
       theme: ThemeData(

@@ -10,4 +10,14 @@ class Product {
     required this.price,
     required this.rate,
   });
+
+  factory Product.fromJSON(dynamic json) {
+    return Product(
+      id: json["Product ID"],
+      name: json["Name"],
+      description: json["Description"],
+      price: json["Price"].toDouble(),
+      rate: json["Rating Avg"].toDouble(),
+    );
+  }
 }
