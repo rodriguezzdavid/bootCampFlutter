@@ -11,7 +11,7 @@ class SplashPage extends StatelessWidget {
       builder: (splashController) {
         return const Scaffold(
           body: Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator.adaptive(),
           ),
         );
       },
