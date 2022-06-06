@@ -24,12 +24,12 @@ class SplashController extends GetxController {
     await Future.delayed(const Duration(seconds: 3));
     // print("The loading was completed");
 
-    // Get.off(() {
-    //   return const UsersPage();
-    // });
     Get.off(() {
-      return const ProductsPage();
+      return const UsersPage();
     });
+    // Get.off(() {
+    //   return const ProductsPage();
+    // });
   }
 
   @override

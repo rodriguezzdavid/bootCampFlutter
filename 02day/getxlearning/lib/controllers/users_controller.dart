@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:getxlearning/api/users_api.dart';
 import 'package:getxlearning/models/app_user.dart';
+import 'package:getxlearning/pages/user_details_page.dart';
 
 class UsersController extends GetxController {
   final _usersAPI = UsersAPI();
@@ -15,7 +16,7 @@ class UsersController extends GetxController {
     int totalFavorites = 0;
 
     for (var item in users) {
-      if(item.isFavorite) {
+      if (item.isFavorite) {
         totalFavorites++;
       }
     }
@@ -38,5 +39,14 @@ class UsersController extends GetxController {
   changeFavoriteStatus(AppUser user) {
     user.isFavorite = !user.isFavorite;
     update(["user-list"]);
+  }
+
+  navigateToDetails(AppUser user) {
+    Get.to(
+      () {
+        return const UserDetailsPage();
+      },
+      arguments: user,
+    );
   }
 }

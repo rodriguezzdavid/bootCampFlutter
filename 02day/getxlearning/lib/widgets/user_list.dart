@@ -45,6 +45,9 @@ class UserList extends StatelessWidget {
                         color: user.isFavorite ? Colors.red : Colors.grey,
                       ),
                     ),
+                    onTap: () {
+                      usersController.navigateToDetails(user);                      
+                    },
                   );
                 },
                 itemCount: usersController.users.length,
