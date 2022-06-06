@@ -1,0 +1,1 @@
+export 'package:getxarchitecture/app/modules/home/home_binding.dart';
