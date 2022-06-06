@@ -11,10 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
       builder: (homeController) {
-        return Scaffold(
-          appBar: AppBar(
-            title: const Text("IOS app"),
-          ),
+        return Scaffold(          
           body: SizedBox(
             width: double.infinity,
             child: Column(
