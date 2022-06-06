@@ -3,4 +3,5 @@ import 'package:getxarchitecture/app/environment.dart';
 
 class ConfigurationController extends GetxController {
   Environment? environment;
+  late bool isIOS;
 }
