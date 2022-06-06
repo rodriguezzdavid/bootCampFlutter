@@ -17,6 +17,8 @@ Future<void> mainCommon(Environment env) async {
   final configurationController = ConfigurationController();
   configurationController.isIOS = GetPlatform.isIOS;
 
+  Get.put(configurationController);
+
   runApp(
     DevicePreview(
       enabled: ConfigReader.deviewPreview,
