@@ -28,7 +28,7 @@ class AndroidApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SplashPage(),
       initialBinding: SplashBinding(),
-      getPages: AppGetPages.pages,
+      getPages: AppGetPages.androidPages,
     );
   }
 }

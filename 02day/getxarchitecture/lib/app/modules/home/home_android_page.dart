@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getxarchitecture/app/modules/controllers.dart';
+import 'package:getxarchitecture/app/presentation/widgets/main_button/main_button.dart';
 import 'package:getxarchitecture/app/utils/app_config/config_reader.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
       builder: (homeController) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text("Production app"),
+            title: const Text("Android app"),
           ),
           body: SizedBox(
             width: double.infinity,
@@ -23,6 +24,7 @@ class HomePage extends StatelessWidget {
                 Text("ConfigReader.testData: ${ConfigReader.testData}"),
                 Text("ConfigReader.isProduction: ${ConfigReader.isProduction}"),
                 Text("ConfigReader.deviewPreview: ${ConfigReader.deviewPreview}"),
+                const MainButton(),
               ],
             ),
           ),

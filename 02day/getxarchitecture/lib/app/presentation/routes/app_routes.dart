@@ -1,3 +1,4 @@
 class AppRoutes {
-  static const home = "/home";
+  static const homeAndroid = "/home-android";
+  static const homeiOS = "/home-ios";
 }

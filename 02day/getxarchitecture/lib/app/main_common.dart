@@ -7,15 +7,12 @@ import 'package:getxarchitecture/app/environment.dart';
 import 'package:getxarchitecture/app/ios_app.dart';
 import 'package:getxarchitecture/app/utils/app_config/config_reader.dart';
 
-Future<void> mainAndroidCommon(Environment env) async {
+Future<void> mainCommon(Environment env) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await ConfigReader.initialize(env);
   await GetStorage.init();
-
-  print("ConfigReader.deviewPreview");
-  print(ConfigReader.deviewPreview);
-
+    
   final isIOS = GetPlatform.isIOS;
 
   runApp(
