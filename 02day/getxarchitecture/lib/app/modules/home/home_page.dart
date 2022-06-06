@@ -9,9 +9,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
       builder: (homeController) {
-        return const Scaffold(
+        return Scaffold(
           body: Center(
-            child: Text("Android app"),
+            child: Text(homeController.configurationController.environment.toString()),
           ),
         );
       },
