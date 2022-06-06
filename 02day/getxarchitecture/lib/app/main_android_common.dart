@@ -1,7 +1,28 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:getxarchitecture/app/android_app.dart';
 import 'package:getxarchitecture/app/environment.dart';
+import 'package:getxarchitecture/app/utils/app_config/config_reader.dart';
 
-void mainAndroidCommon(Environment env) {
-  runApp(AndroidApp(env));
+Future<void> mainAndroidCommon(Environment env) async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await ConfigReader.initialize(env);
+  await GetStorage.init();
+
+  print("ConfigReader.deviewPreview");
+  print(ConfigReader.deviewPreview);
+
+  runApp(
+    DevicePreview(
+      enabled: ConfigReader.deviewPreview,
+      tools: const [
+        ...DevicePreview.defaultTools,
+      ],
+      builder: (context) {
+        return AndroidApp(env);
+      },
+    ),
+  );
 }
