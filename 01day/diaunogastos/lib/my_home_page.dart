@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
 
-    if(isLandscape) {
+    if (isLandscape) {
       contianerTwoHeight = screenHeight;
     }
 
@@ -96,34 +96,17 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                OrientationBuilder(
-                  builder: (ctx2, orientation2) {
-                    print("orientation2");
-                    print(orientation2);
-                    return Container(
-                      color: Colors.red,
-                      height: isLandscape ? 0 : contianerOneHeight,
-                      width: double.infinity,
-                      // child: orientation2 == Orientation.portrait
-                      //     ? Text("Portrait")
-                      //     : Text("Landscape"),
-                      child: Text(orientation.name),                          
-                    );
-                  },
+                Container(
+                  color: Colors.red,
+                  height: contianerOneHeight,
+                  width: double.infinity,
+                  child: Text(orientation.name),
                 ),
                 Container(
-                  color: Colors.yellow,
                   height: contianerTwoHeight,
-                  alignment: Alignment.topCenter,
-                  child: LayoutBuilder(
-                    builder: (ctx, constraints) {
-                      return Container(
-                        color: Colors.purple,
-                        child: TransactionList(
-                          transactions: transactions,
-                        ),
-                      );
-                    },
+                  color: Colors.purple,
+                  child: TransactionList(
+                    transactions: transactions,
                   ),
                 ),
               ],
