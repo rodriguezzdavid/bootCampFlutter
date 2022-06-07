@@ -87,32 +87,57 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: appBar,
-      body: OrientationBuilder(
-        builder: (ctx, orientation) {
-          print("orientation");
-          print(orientation);
-          return SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  color: Colors.red,
-                  height: contianerOneHeight,
-                  width: double.infinity,
-                  child: Text(orientation.name),
+      body: Container(
+        height: double.infinity,
+        color: Colors.purple,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              fit: FlexFit.tight,
+              flex: 50,
+              child: Container(
+                color: Colors.orange,
+                child: Column(
+                  children: [
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 45,
+                      child: Container(
+                        color: Colors.green,
+                        child: Text("Sub container 1sdfsdfsdfsdfsdfsddsf"),
+                      ),
+                    ),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 45,
+                      child: Container(
+                        color: Colors.grey,
+                        child: Text("Sub container 2"),
+                      ),
+                    ),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 10,
+                      child: Container(
+                        color: Colors.transparent,
+                        child: Text("Sub container 3"),
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: contianerTwoHeight,
-                  color: Colors.purple,
-                  child: TransactionList(
-                    transactions: transactions,
-                  ),
-                ),
-              ],
+              ),
             ),
-          );
-        },
+            Flexible(
+              fit: FlexFit.tight,
+              flex: 50,
+              child: Container(
+                color: Colors.red,
+                child: Text("Container 2"),
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _startAddNewTransaction,
