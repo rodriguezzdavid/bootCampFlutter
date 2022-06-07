@@ -10,6 +10,11 @@ class AppGetPages {
       page: () => const HomePage(),
       binding: HomeBinding(),
     ),
+    GetPage(
+      name: AppRoutes.loginAndroid,
+      page: () => const LoginPage(),
+      binding: LoginBinding(),
+    ),
   ];
 
   static final List<GetPage> iOSPages = [

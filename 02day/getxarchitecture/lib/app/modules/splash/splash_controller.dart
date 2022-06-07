@@ -11,11 +11,13 @@ class SplashController extends GetxController {
   }
 
   Future<void> _loadDataAsync() async {
-    await Future.delayed(const Duration(seconds: 3));
+    // await Future.delayed(const Duration(seconds: 3));
 
-    final route = configurationController.isIOS
-        ? AppRoutes.homeiOS
-        : AppRoutes.homeAndroid;
+    // final route = configurationController.isIOS
+    //     ? AppRoutes.homeiOS
+    //     : AppRoutes.homeAndroid;
+
+    const route = AppRoutes.loginAndroid;
 
     Get.offNamed(route);
   }
